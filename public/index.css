@@ -1,0 +1,36 @@
+html {
+  min-height: 100%;
+}
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  opacity: 1;
+  color: #fdfdfd;
+  text-align: center;
+}
+
+.title {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-weight: 600;
+}
+
+.alert-status {
+  margin-bottom: 5%;
+  font-size: 180px;
+  font-weight: 700;
+}
+
+.weather-conditions {
+  margin-bottom: 10%;
+}
+
+.highlight {
+  color: aquamarine;
+  font-weight: 500;
+}
+
+/* .weather-info { */
+  /* margin-top:10%; */
+/* } */

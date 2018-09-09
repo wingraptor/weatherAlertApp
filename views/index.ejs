@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="container">
+  <h1 class="title">Is there a weather warning/watch in Barbados?</h1>
+</div>
+
+
+  <div class="container weather-info">
+    <div class="row">
+      <div class="column col-md-12">
+      <%if(alertBody.includes("THERE ARE NO WATCHES OR WARNINGS AT THIS TIME") || alertBody.includes("DISCONTINUED")){ %>
+        <h1 class="alert-status">NO</h1>
+      <% } else { %>
+        <h1 class="alert-status">Yes</h1>  
+        <h2>
+        There is an active weather warning or watch for Barbados. Please follow this 
+        <a href="http://barbadosweather.org/MT-Warnings-tbpb.php?PlanetOfApes=1535053692" target="_blank">link</a> for more info.
+        </h2>       
+      <% } %>
+        <h2>
+          Weather conditions in <span class="highlight"><%= body.name %>, Barbados</span> as of <%= unixDate.toDateString();%>, <%= unixDate.toLocaleTimeString('en-US', {timeZoneName: 'short'});%>:
+          <span class="highlight"><%=body.main.temp%>°C with <%=body.weather[0].description %></span>.
+          <img src="http://openweathermap.org/img/w/<%=body.weather[0].icon%>.png" alt="">
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+  <% include partials/footer %>
