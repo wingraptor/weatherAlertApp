@@ -1,13 +1,13 @@
 var express = require("express"),
   bodyParser = require("body-parser"),
-  app = express(),
-request = require("request");
+  request = require("request");
+
+var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //Tells Express to look into the public folder to find files(Shows express that public directory exists)
-app.use(express.static("public"));
-
+app.use(express.static(__dirname + "/public")); 
 
 app.get("/", function(req, res) {
   request(
