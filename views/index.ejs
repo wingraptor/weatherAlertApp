@@ -1,7 +1,7 @@
 <% include partials/header %>
 
 <div class="container">
-  <h1 class="title">Is there a weather warning/watch in Barbados?</h1>
+  <h1 class="title">Should You Care About Barbados' Weather Right Now?</h1>
 </div>
 <script>
   var body = document.querySelector("body");
@@ -12,13 +12,18 @@
     <div class="row">
       <div class="column col-md-12">
       <%if(weatherAlert.includes("THERE ARE NO WATCHES OR WARNINGS AT THIS TIME") || weatherAlert.includes("DISCONTINUED")){ %>
-        <h1 class="alert-status">NO</h1>
+        <h1 class="alert-status">No,</h1>
+        <h4>
+          there are no weather warnings/watches or systems currently being tracked. Please follow this
+          <a href="http://barbadosweather.org/MT-Warnings-tbpb.php?PlanetOfApes=1535053692" target="_blank">link</a> for more
+          info.
+        </h4>
       <% } else { %>
-        <h1 class="alert-status">Yes</h1>  
-        <h2>
-        There is an active weather warning or watch for Barbados. Please follow this 
+        <h1 class="alert-status">Yes,</h1>  
+        <h4>
+        there is either a weather warning/watch or a system is being tracked. Please follow this 
         <a href="http://barbadosweather.org/MT-Warnings-tbpb.php?PlanetOfApes=1535053692" target="_blank">link</a> for more info.
-        </h2>       
+        </h4>       
       <% } %>
         <h2>
           Weather conditions in <span class="highlight"><%= weather.name %>, Barbados</span> as of <%= unixDate.toDateString();%>, <%= unixDate.toLocaleTimeString('en-US', {timeZoneName: 'short'});%>:
@@ -29,5 +34,4 @@
     </div>
   </div>
 
-
-  <% include partials/footer %>
+<% include partials/footer %>
