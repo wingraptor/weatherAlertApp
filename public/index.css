@@ -12,7 +12,7 @@ body {
 }
 
 .title {
-  margin-top: 10%;
+  margin-top: 17%;
   margin-bottom: 5%;
   font-weight: 600;
 }
@@ -38,7 +38,7 @@ a:hover {
 }
 
 .attribution-text {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   left: 10px;
 }
