@@ -1,43 +1,20 @@
 var express = require("express"),
-  request = require("request"),
-  rp = require("request-promise");
+    request = require("request"),
+    rp      = require("request-promise");
 
 var app = express();
 
+
+//Variable Declarations
 var parsedOpenWeatherBody = "",
-  parsedbdsWeatherBody = "",
-  bdsWeather = "",
-  unixDate = "";
+    bdsWeather            = "",
+    unixDate              = "";
+
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
-// app.get("/", function(req, res) {
-//   request(
-//     "http://api.openweathermap.org/data/2.5/weather?q=Bridgetown,BB&appid=0c07f5b25a6c999fb6684c3a582694a1&units=metric",
-//     function(error, response, weatherBody) {
-//       var parsedBody = JSON.parse(weatherBody);
-//       // Conv ert API value (seconds since Epoch Time) to milliseconds since Epoch Time. Epoch time: 1st Jan 1970 00:00.
-//       var unixDate = new Date(parsedBody.dt * 1000);
-//       console.log("Open weather error:", error); // Print the error if one occurred
-//       console.log("Open weather statusCode:", response && response.statusCode); // Print the response status code if a response was received
-
-//       // Pulls Data from Barbados Weather Org as a Text File
-//       request("http://barbadosweather.org/", function(error, response, body) {
-//         // var alertBody = JSON.parse(body);
-//         console.log("Barbados Weather error:", error); // Print the error if one occurred
-//         console.log("Barbados Weather statusCode:", response && response.statusCode); // Print the response status code if a response was received
-//         // console.log("body:", body); // Print the HTML for the homepage.
-// res.render("index", {
-//   body: parsedBody,
-//   unixDate: unixDate,
-//   alertBody: body
-// });
-//       });
-//     }
-//   );
-// });
-
+// HOMEPAGE ROUTE
 app.get("/", function(req, res) {
   rp(
     "http://api.openweathermap.org/data/2.5/weather?q=Bridgetown,BB&appid=0c07f5b25a6c999fb6684c3a582694a1&units=metric"

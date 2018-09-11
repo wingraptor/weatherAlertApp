@@ -4,6 +4,7 @@ html {
 body {
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   min-height: 100%;
   opacity: 1;
   color: #fdfdfd;
