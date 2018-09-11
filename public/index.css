@@ -27,11 +27,22 @@ body {
   margin-bottom: 10%;
 }
 
-.highlight {
+.highlight,
+a {
   color: aquamarine;
   font-weight: 500;
 }
 
+a:hover {
+  color: rgb(0, 149, 101);
+}
+
+.attribution-text {
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+}
+
 /* .weather-info { */
-  /* margin-top:10%; */
+/* margin-top:10%; */
 /* } */
