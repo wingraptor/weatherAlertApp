@@ -38,7 +38,7 @@ app.get("/", function(req, res) {
 });
 
 // Tell Express to listen for requests on port 3000 (starts server)
-app.listen(process.env.PORT, function() {
+app.listen(process.env.PORT, process.env.IP, function() {
   //Logs "Server has started" to the console when server has been started
   console.log("Server has started");
 });
