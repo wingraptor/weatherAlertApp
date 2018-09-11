@@ -38,7 +38,7 @@ a:hover {
 }
 
 .attribution-text {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   left: 10px;
 }
